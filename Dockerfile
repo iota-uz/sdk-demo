@@ -15,7 +15,7 @@ RUN go install github.com/a-h/templ/cmd/templ@v0.2.793
 COPY go.mod go.sum ./
 RUN go get github.com/iota-uz/iota-sdk@main
 RUN go mod download
-COPY iota-erp .
+COPY . .
 RUN make generate && go vet ./...
 RUN make css
 
