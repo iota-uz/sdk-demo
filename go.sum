@@ -114,6 +114,8 @@ github.com/iota-uz/iota-sdk v0.0.0-20250111121054-c4bcc73fee16 h1:yS7Z4qCjwZ3s3b
 github.com/iota-uz/iota-sdk v0.0.0-20250111121054-c4bcc73fee16/go.mod h1:hI8t/E7Gc5gUuyRojVCJpI5puBkOcbCMQd434jfbJLI=
 github.com/iota-uz/iota-sdk v0.0.0-20250111135555-bb31e24e8b6e h1:RugMwPnCEpzGAPFjLFiTOnCl4vMuP9ldkbSBweWOpuk=
 github.com/iota-uz/iota-sdk v0.0.0-20250111135555-bb31e24e8b6e/go.mod h1:hI8t/E7Gc5gUuyRojVCJpI5puBkOcbCMQd434jfbJLI=
+github.com/iota-uz/iota-sdk v0.0.0-20250111203531-db78f7031a87 h1:owCPDgkVeLw2GXY2oLp6GpPW/+/y2svjvxICxd4BMb4=
+github.com/iota-uz/iota-sdk v0.0.0-20250111203531-db78f7031a87/go.mod h1:hI8t/E7Gc5gUuyRojVCJpI5puBkOcbCMQd434jfbJLI=
 github.com/iota-uz/utils v0.0.2 h1:7Q2IDXxsNFIWjhg5JbAqYdMJgiTH+/NwgzThzAnhjA8=
 github.com/iota-uz/utils v0.0.2/go.mod h1:0TgPmX4kBiIKn+wD0IZIDBuB9OqF4SzS0C0hhK3+1Xs=
 github.com/jackc/pgpassfile v1.0.0 h1:/6Hmqy13Ss2zCq62VdNG8tM1wchn8zjSGOBJ6icpsIM=
