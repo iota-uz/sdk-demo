@@ -4,7 +4,7 @@ go 1.23.2
 
 require (
 	github.com/benbjohnson/hashfs v0.2.2
-	github.com/iota-uz/iota-sdk v0.0.0-20250111203531-db78f7031a87
+	github.com/iota-uz/iota-sdk v0.0.0-20250111210540-31e89f973b46
 	github.com/jackc/pgx/v5 v5.7.1
 	github.com/lib/pq v1.10.9
 	github.com/sirupsen/logrus v1.9.3
