@@ -17,6 +17,10 @@ generate:
 migrate-up:
 	go run cmd/migrate/main.go up
 
+# Upgrade iota-sdk version && push
+release:
+	go get github.com/iota-uz/iota-sdk@main && git add . && git commit -m "Upgrade iota-sdk version" && git push
+
 # Downgrade database migrations (down)
 migrate-down:
 	go run cmd/migrate/main.go down
