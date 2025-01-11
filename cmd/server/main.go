@@ -18,8 +18,8 @@ import (
 	"github.com/jackc/pgx/v5/pgxpool"
 	_ "github.com/lib/pq"
 
-	internalassets "github.com/iota-uz/demo/iota-erp/internal/assets"
-	"github.com/iota-uz/demo/iota-erp/internal/server"
+	internalassets "github.com/iota-uz/sdk-demo/internal/assets"
+	"github.com/iota-uz/sdk-demo/internal/server"
 )
 
 func main() {

@@ -8,7 +8,7 @@ package layouts
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/iota-uz/demo/iota-erp/internal/assets"
+import "github.com/iota-uz/sdk-demo/internal/assets"
 
 var (
 	favicon = "/assets/" + assets.HashFS.HashName("images/favicon.ico")

@@ -1,7 +1,6 @@
 package server
 
 import (
-	internallayouts "github.com/iota-uz/demo/iota-erp/internal/templates/layouts"
 	"github.com/iota-uz/iota-sdk/modules/core/presentation/controllers"
 	"github.com/iota-uz/iota-sdk/modules/core/presentation/templates/layouts"
 	"github.com/iota-uz/iota-sdk/pkg/application"
@@ -9,6 +8,7 @@ import (
 	"github.com/iota-uz/iota-sdk/pkg/constants"
 	"github.com/iota-uz/iota-sdk/pkg/middleware"
 	"github.com/iota-uz/iota-sdk/pkg/server"
+	internallayouts "github.com/iota-uz/sdk-demo/internal/templates/layouts"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/sirupsen/logrus"
 )

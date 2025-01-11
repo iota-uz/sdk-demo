@@ -1,4 +1,4 @@
-module github.com/iota-uz/demo/iota-erp
+module github.com/iota-uz/sdk-demo
 
 go 1.23.2
 
