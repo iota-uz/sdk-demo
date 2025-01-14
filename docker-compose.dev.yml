@@ -1,0 +1,31 @@
+services:
+  db:
+    restart: always
+    image: postgres:15.1
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=iota_erp
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./volumes/postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5432:5432"
+
+  demo:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+      target: dev
+    volumes:
+      - ./:/demo
+    ports:
+      - 3200:3200
+    depends_on:
+      db:
+        condition: service_healthy

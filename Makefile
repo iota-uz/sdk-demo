@@ -42,6 +42,6 @@ clean:
 	rm -rf $(TAILWIND_OUTPUT)
 
 # Full setup
-setup: deps localdb migrate-up css lint
+setup: deps migrate-up css lint
 
-.PHONY: default deps test test-watch localdb migrate-up migrate-down dev css-watch css lint clean setup
+.PHONY: deps localdb migrate-up migrate-down dev css-watch css lint clean setup
