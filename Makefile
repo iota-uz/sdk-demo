@@ -25,6 +25,13 @@ release:
 migrate-down:
 	go run cmd/migrate/main.go down
 
+# Run PostgreSQL
+localdb:
+	docker compose -f compose.dev.yml up db
+
+clear-localdb:
+	rm -rf postgres-data/
+
 # Compile TailwindCSS (with watch)
 css-watch:
 	tailwindcss -c tailwind.config.js -i $(TAILWIND_INPUT) -o $(TAILWIND_OUTPUT) --minify --watch

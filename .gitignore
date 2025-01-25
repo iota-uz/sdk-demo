@@ -2,3 +2,4 @@
 internal/assets/css/main.min.css
 tmp
 logs/
+postgres-data/
