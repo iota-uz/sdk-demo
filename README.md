@@ -51,7 +51,7 @@ Registering a module is quite simple:
 import (
   "github.com/iota-uz/iota-sdk/pkg/application"
   "github.com/iota-uz/iota-sdk/pkg/configuration"
-  "github.com/iota-uz/iota-sdk/pkg/event"
+  "github.com/iota-uz/iota-sdk/pkg/eventbus"
   "github.com/iota-uz/iota-sdk/pkg/modules"
   "github.com/iota-uz/iota-sdk/pkg/modules/core"
   "github.com/iota-uz/iota-sdk/pkg/modules/finance"
@@ -61,7 +61,7 @@ import (
 func main() {
   conf := configuration.Use()
   pool, err := pgxpool.New(context.TODO(), conf.DBOpts)
-  app := application.New(pool, event.NewEventPublisher())
+  app := application.New(pool, eventbus.NewEventPublisher())
 }
 ```
 2. **Register modules**
