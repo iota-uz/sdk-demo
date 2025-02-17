@@ -117,8 +117,8 @@ github.com/hashicorp/golang-lru/v2 v2.0.7 h1:a+bsQ5rvGLjzHuww6tVxozPZFVghXaHOwFs
 github.com/hashicorp/golang-lru/v2 v2.0.7/go.mod h1:QeFd9opnmA6QUJc5vARoKUSoFhyfM2/ZepoAG6RGpeM=
 github.com/iota-uz/icons v0.0.2 h1:vJuYL5/f1rkfG2KKDKju9VGpWq1ABI7bhDpFOkxheXo=
 github.com/iota-uz/icons v0.0.2/go.mod h1:AhMPovyQQuLj784o96EG0XKsct9izI1q6lMgcJL9Kqo=
-github.com/iota-uz/iota-sdk v0.0.0-20250217142752-e58ff8260a09 h1:0I/zivMS7YwqNi7lvUtMC4A53wN7OzIOoP7YueA6d+g=
-github.com/iota-uz/iota-sdk v0.0.0-20250217142752-e58ff8260a09/go.mod h1:vNSZ1+NXA3SUROxD4H6Q3JfaQFtDxCmeV3O90eXHz7Q=
+github.com/iota-uz/iota-sdk v0.0.0-20250217183032-770df6cd51bb h1:FbDDlAvO11dMtx9aC/ZA0DTjw4SPjAAod6RhrgGB0gQ=
+github.com/iota-uz/iota-sdk v0.0.0-20250217183032-770df6cd51bb/go.mod h1:vNSZ1+NXA3SUROxD4H6Q3JfaQFtDxCmeV3O90eXHz7Q=
 github.com/iota-uz/utils v0.0.2 h1:7Q2IDXxsNFIWjhg5JbAqYdMJgiTH+/NwgzThzAnhjA8=
 github.com/iota-uz/utils v0.0.2/go.mod h1:0TgPmX4kBiIKn+wD0IZIDBuB9OqF4SzS0C0hhK3+1Xs=
 github.com/jackc/pgpassfile v1.0.0 h1:/6Hmqy13Ss2zCq62VdNG8tM1wchn8zjSGOBJ6icpsIM=
