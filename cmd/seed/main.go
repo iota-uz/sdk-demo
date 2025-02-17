@@ -4,9 +4,11 @@ import (
 	"context"
 	"time"
 
+	"github.com/iota-uz/iota-sdk/modules/bichat"
 	"github.com/iota-uz/iota-sdk/modules/core"
 	"github.com/iota-uz/iota-sdk/modules/finance"
 	"github.com/iota-uz/iota-sdk/modules/warehouse"
+	"github.com/iota-uz/iota-sdk/modules/website"
 
 	"github.com/iota-uz/iota-sdk/modules"
 	"github.com/iota-uz/iota-sdk/pkg/application"
@@ -29,8 +31,10 @@ func main() {
 		panic(err)
 	}
 	app.RegisterNavItems(core.NavItems...)
+	app.RegisterNavItems(bichat.NavItems...)
 	app.RegisterNavItems(finance.NavItems...)
 	app.RegisterNavItems(warehouse.NavItems...)
+	app.RegisterNavItems(website.NavItems...)
 	tx, err := pool.Begin(ctx)
 	if err != nil {
 		panic(err)

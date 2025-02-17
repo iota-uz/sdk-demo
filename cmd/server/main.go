@@ -2,16 +2,19 @@ package main
 
 import (
 	"context"
-	"github.com/iota-uz/iota-sdk/modules"
-	_ "github.com/lib/pq"
 	"log"
 	"os"
 	"time"
 
+	"github.com/iota-uz/iota-sdk/modules"
+	_ "github.com/lib/pq"
+
+	"github.com/iota-uz/iota-sdk/modules/bichat"
 	"github.com/iota-uz/iota-sdk/modules/core"
 	"github.com/iota-uz/iota-sdk/modules/core/presentation/controllers"
 	"github.com/iota-uz/iota-sdk/modules/finance"
 	"github.com/iota-uz/iota-sdk/modules/warehouse"
+	"github.com/iota-uz/iota-sdk/modules/website"
 	"github.com/iota-uz/iota-sdk/pkg/application"
 	"github.com/iota-uz/iota-sdk/pkg/configuration"
 	"github.com/iota-uz/iota-sdk/pkg/eventbus"
@@ -45,8 +48,10 @@ func main() {
 		log.Fatalf("failed to load modules: %v", err)
 	}
 	app.RegisterNavItems(core.NavItems...)
+	app.RegisterNavItems(bichat.NavItems...)
 	app.RegisterNavItems(warehouse.NavItems...)
 	app.RegisterNavItems(finance.NavItems...)
+	app.RegisterNavItems(website.NavItems...)
 	app.RegisterHashFsAssets(internalassets.HashFS)
 	app.RegisterControllers(
 		controllers.NewStaticFilesController(app.HashFsAssets()),
