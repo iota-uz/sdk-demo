@@ -48,6 +48,10 @@ lint:
 clean:
 	rm -rf $(TAILWIND_OUTPUT)
 
+# Upgrade iota-sdk version
+upgrade-sdk:
+	chmod +x upgrade.sh && ./upgrade.sh
+
 # Full setup
 setup: deps migrate-up css lint
 
