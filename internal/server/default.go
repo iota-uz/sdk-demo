@@ -8,8 +8,8 @@ import (
 	"github.com/iota-uz/iota-sdk/pkg/constants"
 	"github.com/iota-uz/iota-sdk/pkg/middleware"
 	"github.com/iota-uz/iota-sdk/pkg/server"
-	internalcontrollers "github.com/iota-uz/sdk-demo/internal/controllers"
 	internallayouts "github.com/iota-uz/sdk-demo/internal/templates/layouts"
+	internalcontrollers "github.com/iota-uz/sdk-demo/modules/custom/presentation/controllers"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/sirupsen/logrus"
 )
