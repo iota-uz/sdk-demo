@@ -39,11 +39,11 @@ func main() {
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
 	defer cancel()
-	pool, err := pgxpool.New(ctx, conf.DBOpts)
+	pool, err := pgxpool.New(ctx, conf.Database.Opts)
 	if err != nil {
 		panic(err)
 	}
-	app := application.New(pool, eventbus.NewEventPublisher())
+	app := application.New(pool, eventbus.NewEventPublisher(logger))
 	if err := modules.Load(app, modules.BuiltInModules...); err != nil {
 		log.Fatalf("failed to load modules: %v", err)
 	}
