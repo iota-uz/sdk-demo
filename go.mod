@@ -6,7 +6,7 @@ require (
 	github.com/a-h/templ v0.3.819
 	github.com/benbjohnson/hashfs v0.2.2
 	github.com/gorilla/mux v1.8.1
-	github.com/iota-uz/iota-sdk v0.0.0-20250221155151-3c497f72c6f4
+	github.com/iota-uz/iota-sdk v0.0.0-20250221173101-de5083acfa7a
 	github.com/jackc/pgx/v5 v5.7.1
 	github.com/lib/pq v1.10.9
 	github.com/sirupsen/logrus v1.9.3
