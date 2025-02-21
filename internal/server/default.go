@@ -8,7 +8,6 @@ import (
 	"github.com/iota-uz/iota-sdk/pkg/constants"
 	"github.com/iota-uz/iota-sdk/pkg/middleware"
 	"github.com/iota-uz/iota-sdk/pkg/server"
-	internallayouts "github.com/iota-uz/sdk-demo/internal/templates/layouts"
 	internalcontrollers "github.com/iota-uz/sdk-demo/modules/custom/presentation/controllers"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/sirupsen/logrus"
@@ -26,7 +25,7 @@ func Default(options *DefaultOptions) (*server.HTTPServer, error) {
 	app.RegisterMiddleware(
 		middleware.WithLogger(options.Logger),
 		middleware.Provide(constants.AppKey, app),
-		middleware.Provide(constants.HeadKey, internallayouts.Head()),
+		middleware.Provide(constants.HeadKey, layouts.DefaultHead()),
 		middleware.Provide(constants.LogoKey, layouts.DefaultLogo()),
 		middleware.Provide(constants.PoolKey, options.Pool),
 		middleware.Cors("http://localhost:3000", "ws://localhost:3000"),
