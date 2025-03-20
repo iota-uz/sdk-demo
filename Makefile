@@ -13,17 +13,8 @@ seed:
 generate:
 	go generate ./... && templ generate
 
-# Apply database migrations (up)
-migrate-up:
-	go run cmd/migrate/main.go up
-
-# Upgrade iota-sdk version && push
-release:
-	go get github.com/iota-uz/iota-sdk@main && git add . && git commit -m "Upgrade iota-sdk version" && git push
-
-# Downgrade database migrations (down)
-migrate-down:
-	go run cmd/migrate/main.go down
+migrate:
+	go run cmd/migrate/main.go $(filter-out $@,$(MAKECMDGOALS))
 
 # Run PostgreSQL
 localdb:
@@ -52,7 +43,11 @@ clean:
 upgrade-sdk:
 	chmod +x upgrade.sh && ./upgrade.sh
 
+# Prevents make from treating the argument as an undefined target
+%:
+	@:
+
 # Full setup
 setup: deps migrate-up css lint
 
-.PHONY: deps localdb migrate-up migrate-down dev css-watch css lint clean setup
+.PHONY: deps localdb migrate dev css-watch css lint clean setup
