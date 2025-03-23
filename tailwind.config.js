@@ -1,5 +1,5 @@
 import path from "path";
-import {execSync} from "child_process";
+import { execSync } from "child_process";
 
 const goPath = execSync("go env GOPATH").toString().trim();
 const sdkPath = path.join(goPath, "/pkg/mod/github.com/iota-uz/**/*.{html,js,templ}")
@@ -7,7 +7,8 @@ const sdkPath = path.join(goPath, "/pkg/mod/github.com/iota-uz/**/*.{html,js,tem
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    sdkPath
+    sdkPath,
+    "./modules/**/*.{html,js,ts,templ}"
   ],
   theme: {
     extend: {
