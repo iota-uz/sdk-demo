@@ -2,6 +2,8 @@ package main
 
 import (
 	"context"
+	"log"
+	"os"
 	"runtime/debug"
 	"time"
 
@@ -17,30 +19,42 @@ import (
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
+func pgxPool() *pgxpool.Pool {
+	conf := configuration.Use()
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
+	defer cancel()
+	pool, err := pgxpool.New(ctx, conf.Database.Opts)
+	if err != nil {
+		panicWithStack(err)
+	}
+	return pool
+}
+
 func panicWithStack(err error) {
 	errorWithStack := string(debug.Stack()) + "\n\nError: " + err.Error()
 	panic(errorWithStack)
 }
 
 func main() {
+	defer func() {
+		if r := recover(); r != nil {
+			configuration.Use().Unload()
+			log.Println(r)
+			debug.PrintStack()
+			os.Exit(1)
+		}
+	}()
+
 	conf := configuration.Use()
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
-	defer cancel()
-	pool, err := pgxpool.New(ctx, conf.Database.Opts)
-	if err != nil {
-		panic(err)
-	}
+	ctx := context.Background()
+	pool := pgxPool()
 	app := application.New(pool, eventbus.NewEventPublisher(conf.Logger()))
-	if err := modules.Load(app); err != nil {
-		panic(err)
+	if err := modules.Load(app, modules.BuiltInModules...); err != nil {
+		panicWithStack(err)
 	}
 	app.RegisterNavItems(modules.NavLinks...)
 	tx, err := pool.Begin(ctx)
 	if err != nil {
-		panic(err)
-	}
-
-	if err := modules.Load(app); err != nil {
 		panicWithStack(err)
 	}
 
@@ -54,6 +68,7 @@ func main() {
 		panicWithStack(err)
 	}
 	seeder.Register(
+		coreseed.CreateCurrencies,
 		coreseed.CreatePermissions,
 		coreseed.UserSeedFunc(usr),
 	)
