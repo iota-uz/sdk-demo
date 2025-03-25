@@ -2,6 +2,9 @@ FROM iotauz/sdk:base-0.0.1
 
 WORKDIR /build
 
+# Install PostgreSQL client
+RUN apt-get update && apt-get install -y postgresql-client && apt-get clean
+
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
