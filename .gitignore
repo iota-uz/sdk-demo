@@ -3,3 +3,7 @@ internal/assets/css/main.min.css
 tmp
 logs/
 postgres-data/
+.env
+go.work*
+*_templ.txt
+
