@@ -6,4 +6,4 @@ postgres-data/
 .env
 go.work*
 *_templ.txt
-
+.DS_Store
